@@ -137,11 +137,11 @@ btnClearItems.addEventListener("click", () => {
 
   sortselect.value = "select";
   sortname.value = "select";
+  saving();
 });
 
 btnsave.addEventListener("click", () => {
-  const arrRecordsJSON = JSON.stringify(arrRecords);
-  localStorage.setItem("records", arrRecordsJSON);
+  saving();
 });
 
 sortselect.addEventListener("change", () => {
@@ -151,6 +151,11 @@ sortselect.addEventListener("change", () => {
 sortname.addEventListener("change", () => {
   sorting();
 });
+
+function saving() {
+  const arrRecordsJSON = JSON.stringify(arrRecords);
+  localStorage.setItem("records", arrRecordsJSON);
+}
 
 function sorting() {
   if (sortname.value == "fname") {
