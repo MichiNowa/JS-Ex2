@@ -22,12 +22,14 @@ if (arrRecords.length == 0) {
   document.getElementById("status").style.display = "none";
 }
 
+//get fromm loc storge
 const storedRecordsJSON = localStorage.getItem("records");
 if (storedRecordsJSON) {
   arrRecords = JSON.parse(storedRecordsJSON);
 }
 iterateRecords();
 
+//show buttons if nay sulod loc storge
 console.log("listen arrRecords");
 if (arrRecords.length === 0) {
   console.log("arrRecords empty");
@@ -179,7 +181,7 @@ function sorter(name) {
   iterateRecords();
 }
 function iterateRecords() {
-  // const tblTHs = new Array();
+
 
   while (tblRecords.hasChildNodes()) {
     tblRecords.removeChild(tblRecords.firstChild);
